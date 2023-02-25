@@ -1,3 +1,4 @@
+import Container from 'react-bootstrap/Container';
 import { NavLink } from "react-router-dom";
 
 
@@ -8,11 +9,11 @@ export const LIST_PAGES = [
 
 export const Header = () => {
     const activeClassName = "nav-link active";
-    return (<>
-        <div className="container">
+    return (
+        <Container>
             <header className="d-flex justify-content-center py-3 border-bottom">
                 <ul className="nav nav-pills">
-                {LIST_PAGES.map((page, index) => {
+                    {LIST_PAGES.map((page, index) => {
                         return (
                             <li key={index} className="nav-item">
                                 <NavLink to={page}
@@ -27,6 +28,6 @@ export const Header = () => {
                     })}
                 </ul>
             </header>
-        </div>
-    </>);
+        </Container>
+    );
 }

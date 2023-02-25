@@ -8,8 +8,10 @@ import App from './App';
 import { store } from './redux/erc-20/store';
 import { LIST_PAGES } from './views/Header';
 import { ExampleERC20 } from './views/ExampleERC20';
+import { Home } from './views/Home';
 
 const LIST_COMPONENTS_PAGE = [
+  <Home/>,
   <ExampleERC20/>
 ]
 
@@ -20,7 +22,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           {LIST_COMPONENTS_PAGE.map((item, index)=>{
-            return <Route key={index} path={LIST_PAGES[index+1]} element={item} />
+            return <Route key={index} path={LIST_PAGES[index]} element={item} />
           })}
         </Route>
       </Routes>
