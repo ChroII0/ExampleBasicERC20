@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from './App';
-import { store } from './redux/erc-20/store';
+import { store } from './redux/store';
 import { LIST_PAGES } from './views/Header';
 import { ExampleERC20 } from './views/ExampleERC20';
 import { Home } from './views/Home';

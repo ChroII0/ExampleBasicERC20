@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { ITransactionData } from '../../../../interface';
-import { useAppDispatch, useAppSelector } from '../../../../redux/erc-20/hooks';
+import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 import { setMyWallet } from '../../../../redux/erc-20/slides/connectWalletSlide';
 import { setErrorTransaction, setSuccessfulTransaction } from '../../../../redux/erc-20/slides/eventEmitterSlide';
 import { setMyBalanceToken } from '../../../../redux/erc-20/slides/myBalanceTokenSlide';

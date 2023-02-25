@@ -1,4 +1,4 @@
-import { MyCV } from "../components/home/MyCV";
+import { MyCV } from "../components/profile/MyCV";
 
 
 

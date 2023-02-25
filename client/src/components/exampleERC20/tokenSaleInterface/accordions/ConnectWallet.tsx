@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-import { useAppDispatch, useAppSelector } from '../../../../redux/erc-20/hooks';
+import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 import { selectConnectWallet, setMyWallet } from '../../../../redux/erc-20/slides/connectWalletSlide';
 import { setAlert, setErrorCall } from '../../../../redux/erc-20/slides/eventEmitterSlide';
 import { selectMetadataToken } from '../../../../redux/erc-20/slides/metadataTokenSlide';

@@ -1,5 +1,5 @@
 import Form from 'react-bootstrap/Form';
-import { useAppDispatch } from '../../../redux/erc-20/hooks';
+import { useAppDispatch } from '../../../redux/hooks';
 import { setUnit } from '../../../redux/erc-20/slides/unitSlide';
 
 export const SelectUnit = () => {

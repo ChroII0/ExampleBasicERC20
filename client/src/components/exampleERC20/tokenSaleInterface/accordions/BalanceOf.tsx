@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useAppDispatch, useAppSelector } from "../../../../redux/erc-20/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import { setErrorCall } from "../../../../redux/erc-20/slides/eventEmitterSlide";
 import { selectMetadataToken } from "../../../../redux/erc-20/slides/metadataTokenSlide";
 import { selectStatusBtn, setIsDisabled } from "../../../../redux/erc-20/slides/statusBtnSlide";

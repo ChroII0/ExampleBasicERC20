@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { IInputToken } from '../../../../interface';
-import { useAppDispatch, useAppSelector } from '../../../../redux/erc-20/hooks';
+import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 import { setErrorTransaction, setSuccessfulTransaction } from '../../../../redux/erc-20/slides/eventEmitterSlide';
 import { selectStatusBtn, setIsDisabled } from '../../../../redux/erc-20/slides/statusBtnSlide';
 import { setTokenSaleWallet } from '../../../../redux/erc-20/slides/tokenSaleWalletSlide';

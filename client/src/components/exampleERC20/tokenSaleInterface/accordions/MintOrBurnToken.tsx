@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { IMintBurnData } from '../../../../interface';
 import { LoadingButton } from "../LoadingButton";
 import { selectStatusBtn, setIsDisabled } from "../../../../redux/erc-20/slides/statusBtnSlide";
-import { useAppDispatch, useAppSelector } from "../../../../redux/erc-20/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import { burnToken, getCurrentWalletTokenSale, getMyBalanceToken, getTotalSupply, mintToken } from '../../../../utils/interact';
 import { checkInputNumber, createParsedData } from '../../../../utils/helpFunc';
 import { ADDRESS_INPUT_NAME, BUTTON_INNERTEXT_BURN, BUTTON_INNERTEXT_MINT, MAX_INPUT_VALUE_TOKEN, MIN_INPUT_VALUE_TOKEN, STEP_INPUT_VALUE_TOKEN, TOKEN_INPUT_NAME } from '../../../../utils/constants';

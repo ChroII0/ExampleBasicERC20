@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IMetadataToken } from "../../../interface";
-import { RootState } from '../store';
+import { RootState } from '../../store';
 
 
 

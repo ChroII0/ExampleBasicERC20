@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
-import { useAppDispatch, useAppSelector } from '../../../redux/erc-20/hooks';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import { clearData, selectEventEmitter } from '../../../redux/erc-20/slides/eventEmitterSlide';
 
 

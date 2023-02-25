@@ -5,7 +5,7 @@ import { MetadataToken } from "./accordions/MetadataToken";
 import { MintOrBurnToken } from "./accordions/MintOrBurnToken";
 import { SelectUnit } from "./SelectUnit";
 import { Transaction } from "./accordions/Transaction";
-import { AccordionItem } from "../../AccordionItem";
+import { AccordionItem } from "../AccordionItem";
 import { TokenSaleWallet } from "./accordions/TokenSaleWallet";
 import { Allowance } from "./accordions/Allowance";
 import Accordion from 'react-bootstrap/Accordion';

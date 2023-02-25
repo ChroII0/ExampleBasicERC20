@@ -2,13 +2,11 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 
+interface Props {
+    data: object | any
+}
 
-
-export const Skill = () => {
-    const listSkill = [
-        "HTML", "CSS", "Bootstrap", "React", "Nodejs", "JavaScript", "TypeScript",
-        "MongoDB", "SQL", "Python", "Solidity", "VS Code", "Truffle", "Docker", "Minikube", "Git", "GitHub", "Linux command line (CLI)"
-    ]
+export const Skill = (props: Props) => {
     return (<>
         <Row className='mt-3'>
             <h3>SKILLS</h3>
@@ -21,12 +19,12 @@ export const Skill = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {listSkill.map((item, index) => {
+                        {props.data.map((item: any, index: any) => {
                             return (
                                 <>
                                     <tr>
-                                        <td>{item}</td>
-                                        <td>Basic</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.level}</td>
                                     </tr>
                                 </>
                             )

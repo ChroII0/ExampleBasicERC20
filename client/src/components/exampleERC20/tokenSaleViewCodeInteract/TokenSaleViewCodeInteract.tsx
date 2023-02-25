@@ -1,5 +1,5 @@
 import { Accordion } from "react-bootstrap";
-import { AccordionItem } from "../../AccordionItem";
+import { AccordionItem } from "../AccordionItem";
 import { AllownaceSyntax } from "./accordions/AllowanceSyntax";
 import { BalanceOfSyntax } from "./accordions/BalanceOfSyntax";
 import { ConnectWalletSyntax } from "./accordions/ConnectWalletSyntax";

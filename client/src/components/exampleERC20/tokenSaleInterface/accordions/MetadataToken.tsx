@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../redux/erc-20/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import { selectMetadataToken, setMetadataToken } from "../../../../redux/erc-20/slides/metadataTokenSlide";
 import { selectUnit } from "../../../../redux/erc-20/slides/unitSlide";
 import { withUnit } from "../../../../utils/helpFunc";

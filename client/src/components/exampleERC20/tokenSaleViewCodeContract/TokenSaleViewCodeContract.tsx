@@ -1,5 +1,5 @@
 import { Accordion } from "react-bootstrap";
-import { AccordionItem } from "../../AccordionItem";
+import { AccordionItem } from "../AccordionItem";
 import { MyTokenContractSyntax } from "./accordions/MyTokenContractSyntax";
 import { TokenSaleContractSyntax } from "./accordions/TokenSaleContractSyntax";
 
