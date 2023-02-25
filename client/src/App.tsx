@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
