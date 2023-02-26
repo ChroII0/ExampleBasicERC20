@@ -1,21 +1,14 @@
 import { Accordion } from "react-bootstrap";
 import { AccordionItem } from "../AccordionItem";
-import { AllowanceDemo } from "./accordions/AllowanceDemo";
-import { BalanceOfDemo } from "./accordions/BalanceOfDemo";
-import { ConnectWalletDemo } from "./accordions/ConnectWalletDemo";
-import { MintOrBurnTokenDemo } from "./accordions/MintOrBurnTokenDemo";
-import { TransactionDemo } from "./accordions/TransactionDemo";
+import { DemoALl } from "./accordions/DemoAll";
+
 
 
 
 
 
 const LIST_TITLE_COMPONETNS = [
-    "Connect Wallet Demo",
-    "Mint Or Burn Token (only ROLE) Demo",
-    "Set Allowance To TokenSale Contract (only ROLE) Demo",
-    "Check Balance Of Address Demo",
-    "Transaction Demo"
+    "TokenSale Demo"
 ]
 
 
@@ -23,11 +16,7 @@ export const TokenSaleDemo = () => {
 
     //#region Create Array Components 
     const ListComponents: Array<React.ReactNode> = [
-        <ConnectWalletDemo/>,
-        <MintOrBurnTokenDemo/>,
-        <AllowanceDemo/>,
-        <BalanceOfDemo/>,
-        <TransactionDemo/>
+        <DemoALl/>
     ]
     //#endregion
 
