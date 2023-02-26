@@ -12,13 +12,13 @@ import { TransactionSyntax } from "./accordions/TransactionSyntax";
 
 
 const LIST_TITLE_COMPONETNS = [
-    "Connect Wallet Syntax",
-    "Metadata Token Syntax",
-    "TokenSale Contract Wallet Syntax",
-    "Mint Or Burn Token (only ROLE) Syntax",
-    "Set Allowance To TokenSale Contract (only ROLE) Syntax",
-    "Check Balance Of Address Syntax",
-    "Transaction Syntax"
+    "Connect Wallet",
+    "Metadata Token",
+    "TokenSale Contract Wallet",
+    "Mint Or Burn Token (only ROLE)",
+    "Set Allowance To TokenSale Contract (only ROLE)",
+    "Check Balance Of Address",
+    "Transaction"
 ]
 
 

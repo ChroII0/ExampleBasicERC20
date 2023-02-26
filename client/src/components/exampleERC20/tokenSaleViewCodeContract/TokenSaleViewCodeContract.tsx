@@ -8,8 +8,8 @@ import { TokenSaleContractSyntax } from "./accordions/TokenSaleContractSyntax";
 
 
 const LIST_TITLE_COMPONETNS = [
-    "MyToken Contract Syntax",
-    "TokenSale Contract Syntax"
+    "MyToken Contract",
+    "TokenSale Contract"
 ]
 
 

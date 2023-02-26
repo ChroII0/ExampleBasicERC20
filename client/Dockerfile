@@ -3,6 +3,7 @@ FROM node:lts-alpine3.17 AS builder
 
 ENV REACT_APP_ADDRESS_MYTOKEN_CONTRACT=<----Address-MyToken-Contract---->
 ENV REACT_APP_ADDRESS_TOKENSALE_CONTRACT=<----Address-TokenSale-Contract---->
+ENV REACT_APP_URL_API=<----url-web-api---->
 
 WORKDIR /client
 

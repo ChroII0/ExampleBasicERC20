@@ -10,7 +10,7 @@ import { selectStatusBtn, setIsDisabled } from '../../../../redux/erc-20/slides/
 import { setTokenSaleWallet } from '../../../../redux/erc-20/slides/tokenSaleWalletSlide';
 import { ADDRESS_INPUT_NAME, BUTTON_INNERTEXT_BUY_TOKEN, BUTTON_INNERTEXT_SELL_TOKEN, BUTTON_INNERTEXT_SEND_TOKEN, ETHER_INPUT_NAME, MAX_INPUT_VALUE_ETHER, MAX_INPUT_VALUE_TOKEN, MIN_INPUT_VALUE_ETHER, MIN_INPUT_VALUE_TOKEN, STEP_INPUT_VALUE_ETHER, STEP_INPUT_VALUE_TOKEN, TOKEN_INPUT_NAME } from '../../../../utils/constants';
 import { checkInputNumber, createParsedData } from '../../../../utils/helpFunc';
-import { buyToken, getCurrentWalletConnected, getCurrentWalletTokenSale, getMyBalanceToken, getTotalSupply, sellToken, sendToken } from '../../../../utils/interact';
+import { buyToken, getCurrentWalletConnected, getCurrentWalletTokenSale, getMyBalanceToken, sellToken, sendToken } from '../../../../utils/interact';
 import { LoadingButton } from '../LoadingButton';
 
 export const Transaction = () => {
