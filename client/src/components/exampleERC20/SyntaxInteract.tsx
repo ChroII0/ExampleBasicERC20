@@ -6,15 +6,15 @@ interface Props {
   listFunc: string[],
 }
 
+
 export const SyntaxInteract = (props: Props) => {
   let codeString = "";
-  for (let i = 0; i < props.listFunc.length; i++)
-  {
-    codeString = codeString + props.listFunc[i] + "\n\n"; 
+  for (let i = 0; i < props.listFunc.length; i++) {
+    codeString = codeString + props.listFunc[i] + "\n\n";
 
   }
-  return (
-    <SyntaxHighlighter language="javascript" style={materialDark}>
+  return (    
+    <SyntaxHighlighter language="javascript" style={materialDark} wrapLongLines={true}>
       {codeString}
     </SyntaxHighlighter>
   );

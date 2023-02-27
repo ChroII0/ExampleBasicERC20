@@ -57,8 +57,8 @@ contract MyToken is ERC20, ERC20Burnable, AccessControl {
 
 export const MyTokenContractSyntax = () => {
     return (<>
-        <SyntaxInteract
-            listFunc={listFunc}
-        />
+            <SyntaxInteract
+                listFunc={listFunc}
+            />
     </>);
 }

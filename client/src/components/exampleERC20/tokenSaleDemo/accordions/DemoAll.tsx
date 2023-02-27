@@ -16,6 +16,7 @@ export const DemoALl = () => {
             >
             </iframe>
         </div>
+        <p className="text-start mt-2"><strong>Description:</strong> I used Truffle to compile and deploy my smart contracts to the Ganache network. Then, I added the network to my MetaMask wallet and built a React client that interacts with the contracts using web3.js.</p>
     </>
     );
 }
