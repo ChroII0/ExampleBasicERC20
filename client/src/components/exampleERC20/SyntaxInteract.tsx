@@ -14,7 +14,7 @@ export const SyntaxInteract = (props: Props) => {
 
   }
   return (    
-    <SyntaxHighlighter language="javascript" style={materialDark} wrapLongLines={true}>
+    <SyntaxHighlighter language="javascript" style={materialDark}>
       {codeString}
     </SyntaxHighlighter>
   );
