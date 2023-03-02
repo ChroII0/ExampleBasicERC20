@@ -11,15 +11,14 @@ interface Props {
 export const ContactInformation = (props: Props) => {
     return (<>
         <Row className='mt-3 mb-4'>
-            <Col className='' xs={12} md={4}>
+            <Col className='left-to-right' xs={12} md={4}>
                 <Image
-                    // width="70%"
                     fluid={true}
                     roundedCircle={true}
                     src={props.data.avatar}
                 />
             </Col>
-            <Col xs={12} md={8}>
+            <Col className='right-to-left' xs={12} md={8}>
                 <h2 className='mb-3 text-md-start text-center mt-3 mt-md-0'>{props.data.name}</h2>
                 <p><strong>Dob:</strong> {props.data.dob}</p>
                 <p><strong>Gender:</strong> {props.data.gender}</p>

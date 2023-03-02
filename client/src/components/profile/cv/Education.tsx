@@ -7,7 +7,7 @@ interface Props {
 
 export const Education = (props: Props) => {
     return (<>
-        <Row className='mt-3'>
+        <Row className='mt-3 right-to-left'>
             <h3>EDUCATION</h3>
             {props.data.map((item: any, index: any) => {
                 return (<>

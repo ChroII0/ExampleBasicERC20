@@ -8,7 +8,7 @@ interface Props {
 
 export const CareerObjective = (props: Props) => {
     return (<>
-        <Row className='mt-3'>
+        <Row className='mt-3 left-to-right'>
             <h3>BACKGROUND/CAREER OBJECTIVES</h3>
             <Col className='border-top border-dark'>
                 <p className='pt-3'>

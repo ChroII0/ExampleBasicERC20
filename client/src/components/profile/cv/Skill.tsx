@@ -8,7 +8,7 @@ interface Props {
 
 export const Skill = (props: Props) => {
     return (<>
-        <Row className='mt-3'>
+        <Row className='mt-3 right-to-left'>
             <h3>SKILLS</h3>
             <Col className='border-top border-dark'>
                 <Table striped>

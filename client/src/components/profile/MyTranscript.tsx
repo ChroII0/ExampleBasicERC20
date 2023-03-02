@@ -9,7 +9,7 @@ import Image from 'react-bootstrap/Image'
 
 export const MyTranscript = () => {
     return (<>
-        <Container className='col-12'>
+        <Container className='col-12 right-to-left'>
             <Image
                 className='mt-5'
                 width="100%"

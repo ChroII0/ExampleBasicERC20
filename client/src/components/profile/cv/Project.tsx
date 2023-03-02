@@ -9,7 +9,7 @@ interface Props {
 
 export const Project = (props: Props) => {
     return (<>
-        <Row className='mt-3'>
+        <Row className='mt-3 right-to-left'>
             <h3>PROJECTS</h3>
             <Col className='border-top border-dark'>
                 <p className='pt-3'>{props.data.type} :

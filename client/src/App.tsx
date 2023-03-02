@@ -7,6 +7,8 @@ import { Footer } from "./views/Footer";
 import { Header } from "./views/Header";
 import { LoadingPage } from "./views/LoadingPage";
 import axios from 'axios';
+import "./App.scss";
+
 
 
 
