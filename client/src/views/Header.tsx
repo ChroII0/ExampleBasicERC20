@@ -11,7 +11,7 @@ export const Header = () => {
     const activeClassName = "nav-link active";
     return (
         <Container>
-            <header className="d-flex justify-content-center py-3 border-bottom">
+            <header className="d-flex justify-content-center py-3 border-bottom top-to-bottom">
                 <ul className="nav nav-pills">
                     {LIST_PAGES.map((page, index) => {
                         return (

@@ -11,19 +11,19 @@ export const ExampleERC20 = () => {
     <Tabs
       defaultActiveKey="interface"
       id="justify-tab-example"
-      className="mb-3"
+      className="mb-3 right-to-left"
       justify
     >
-      <Tab eventKey="interface" title="Interface">
+      <Tab eventKey="interface" title="Interface" className='right-to-left'>
         <TokenSaleInterface />
       </Tab>
-      <Tab eventKey="demo" title="Demo">
+      <Tab eventKey="demo" title="Demo" className='right-to-left'>
         <TokenSaleDemo/>
       </Tab>
-      <Tab eventKey="code-interact" title="View Code Interact">
+      <Tab eventKey="code-interact" title="View Code Interact" className='right-to-left'>
         <TokenSaleViewCodeInteract />
       </Tab>
-      <Tab eventKey="code-contract" title="View Code Contract">
+      <Tab eventKey="code-contract" title="View Code Contract" className='right-to-left'>
         <TokenSaleViewCodeContract/>
       </Tab>
     </Tabs>

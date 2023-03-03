@@ -12,7 +12,7 @@ export const Home = () => {
         <Tabs
             defaultActiveKey="cv"
             id="justify-tab-example"
-            className="mb-3"
+            className="mb-3 left-to-right"
             justify
         >
             <Tab eventKey="cv" title="My CV">
