@@ -1,4 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import { ConnectWalletSlide } from './erc-20/slides/connectWalletSlide';
 import { EventEmitterSlide } from './erc-20/slides/eventEmitterSlide';
 import { MetadataTokenSlide } from './erc-20/slides/metadataTokenSlide';
@@ -10,11 +12,15 @@ import { UnitSlide } from './erc-20/slides/unitSlide';
 import { ProfileSlide } from './profile/slides/profileSlide';
 
 
+const persistConfig = {
+  key: 'root',
+  storage,
+};
 
 
-// Create store
-export const store = configureStore({
-  reducer: {
+const persistedReducer = persistReducer(
+  persistConfig,
+  combineReducers({
     metadataToken: MetadataTokenSlide.reducer,
     statusBtn: StatusBtnSlide.reducer,
     connectWallet: ConnectWalletSlide.reducer,
@@ -23,9 +29,15 @@ export const store = configureStore({
     unit: UnitSlide.reducer,
     myBalanceToken: MyBalanceToken.reducer,
     eventEmitter: EventEmitterSlide.reducer,
-    profile: ProfileSlide.reducer
-  }
+    profile: ProfileSlide.reducer,
+  }),
+);
+
+export const store = configureStore({
+  reducer: persistedReducer,
 });
+
+export const persistor = persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

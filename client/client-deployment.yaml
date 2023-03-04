@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+  labels:
+    app: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: client
+          image: client
+          env:
+            - name: REACT_APP_ADDRESS_MYTOKEN_CONTRACT
+              value: "<----Address-MyToken-Contract---->"
+            - name: REACT_APP_ADDRESS_TOKENSALE_CONTRACT
+              value: "<----Address-TokenSale-Contract---->"
+            - name: REACT_APP_URL_API
+              value: "https://server-profile-api.onrender.com/api/profile"
+          ports:
+            - containerPort: 80

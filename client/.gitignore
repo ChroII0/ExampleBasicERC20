@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+client-development.yaml
+client-service.yaml
 
 # testing
 /coverage
