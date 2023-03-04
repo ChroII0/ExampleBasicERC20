@@ -13,6 +13,7 @@ connectRedis().catch(err => console.log(err));
 
 async function connectRedis() {
     await client.connect();
+    await client.hSet("ip_counts", "total_count", 0);
     console.log("connected Redis");
 }
 

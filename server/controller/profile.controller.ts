@@ -21,18 +21,22 @@ async function checkIpAddress(ip: string | null) {
             } else {
                 await client.hSet("ip_counts", ip, 1);
             }
+            await client.hIncrBy("ip_counts", "total_count", 1);
             const visitor = {
                 visitor_ip: ip,
-                access_log: await client.hGet("ip_counts", ip)
+                access_log: await client.hGet("ip_counts", ip),
+                total_access_log: await client.hGet("ip_counts", "total_count")
             };
             return visitor;
         } catch (err) {
             console.log(err);
+            await client.hIncrBy("ip_counts", "total_count", 1);
         }
     }
     const visitor = {
         visitor_ip: ip,
-        access_log: "Failed to update Redis"
+        access_log: "Failed to update Redis",
+        total_access_log: await client.hGet("ip_counts", "total_count")
     };
     return visitor;
 }
