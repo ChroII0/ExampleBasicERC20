@@ -33,8 +33,11 @@ async function checkIpAddress(ip: string) {
         return visitor;
     }
 }
+
+
 export const getDataProfile = async (req: Request, res: Response) => {
-    const visitor_data = await checkIpAddress(req.ip);    
+    const ipAddress = IP.address();
+    const visitor_data = await checkIpAddress(ipAddress);    
     try {
         const contacts = await Contact.find({});
         const objectives = await Objective.find({});
