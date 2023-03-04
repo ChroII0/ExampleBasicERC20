@@ -25,7 +25,7 @@ function App() {
   }, []);
   return (
     <>
-      {Object.keys(profile.data).length > 0 ?
+      {Object.keys(profile.data).length == 8 ?
         <>
           <Header />
           <Outlet />
