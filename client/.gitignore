@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-client-deplopment.yaml
+client-deployment.yaml
 client-service.yaml
 
 # testing
