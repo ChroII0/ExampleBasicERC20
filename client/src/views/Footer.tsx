@@ -11,7 +11,11 @@ export const Footer = () => {
     return (
         <Container>
             <footer className="py-3 my-4 border-top">
-                <ul className="list-unstyled d-flex justify-content-end">
+                <ul className="list-unstyled d-flex justify-content-between">
+                    <li className='flex-grow-1'>
+                        <span className='me-3'>Visitor IP: <strong>{profile.data.Visitor.visitor_ip}</strong></span>
+                        <span>Access log: <strong>{profile.data.Visitor.access_log}</strong></span>
+                    </li>
                     <li className="ms-3"><a className="text-muted" target="_blank" rel="noopener noreferrer" href={profile.data.SocialMedia[0].facebook}
                     >{<BsFacebook size={30} />}</a></li>
                     <li className="ms-3"><a className="text-muted" target="_blank" rel="noopener noreferrer" href={profile.data.SocialMedia[0].instagram}

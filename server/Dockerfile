@@ -3,7 +3,11 @@ FROM node:lts-alpine3.17 AS builder
 
 WORKDIR /server
 
-
+ENV USERNAME_MONGO=<--------->
+ENV PASSWORD_MONGO=<--------->
+ENV CLUSTER_MONGO=<--------->
+ENV DB=<--------->
+ENV REDIS_URL=<--------->
 
 COPY ["package.json", "package-lock.json*", "./"]
 
