@@ -19,10 +19,10 @@ function App() {
   useEffect(() => {
       const fetchProfile = async () => {
           const res = await axios.get(urlApi);
-          dispatch(setProfile(res.data));
+          dispatch(setProfile(res.data));   
       }
       fetchProfile();
-  }, []);
+  }, []);  
   return (
     <>
       {Object.keys(profile.data).length == 8 ?

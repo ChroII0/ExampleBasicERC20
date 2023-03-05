@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 
 
 interface Props {
-    data: object | any,
+    data: object[] | any,
     github: string
 }
 
@@ -47,10 +47,14 @@ export const Project = (props: Props) => {
                                         <td>
                                             <ul className='list-unstyled'>
                                                 {project.technical_project.map((item: any, index: any) => {
-                                                    <li key={index} className={index < project.technical_project.length - 1 ? "py-2 border-bottom" : "py-2"}>
-                                                        <p className='fw-bold'>Part {index + 1}: {item.part}</p>
-                                                        {item.data}
-                                                    </li>
+                                                    return (
+                                                        <>
+                                                            <li key={index} className={index < project.technical_project.length - 1 ? "py-2 border-bottom" : "py-2"}>
+                                                                <p className='fw-bold'>Part {index + 1}: {item.part}</p>
+                                                                {item.data}
+                                                            </li>
+                                                        </>
+                                                    )
                                                 })}
                                             </ul>
                                         </td>
