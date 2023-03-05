@@ -18,9 +18,13 @@ connectRedis().catch(err => console.log(err));
 
 async function connectRedis() {
     await client.connect();
-    const isExist = await client.hExists("ip_counts", "total_count");
-    if (!isExist) {
+    const isCountExist = await client.hExists("ip_counts", "total_count");
+    const isDataExist = await client.exists("data");
+    if (!isCountExist) {
         await client.hSet("ip_counts", "total_count", 0);
+    }
+    if (!isDataExist) {
+        await client.set("data", "");
     }
     console.log("connected Redis");
 }

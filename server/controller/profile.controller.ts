@@ -45,6 +45,7 @@ async function checkIpAddress(ip: string | null) {
 export const getDataProfile = async (req: Request, res: Response) => {
     const ipAddress = requestIp.getClientIp(req);
     const visitor_data = await checkIpAddress(ipAddress);
+    const dataInRedis = await client.get("data");
     try {
         const contacts = await Contact.find({});
         const objectives = await Objective.find({});
@@ -63,7 +64,13 @@ export const getDataProfile = async (req: Request, res: Response) => {
             SocialMedia: SocialMedias,
             Visitor: visitor_data
         }
-        res.send(data);
+        if (dataInRedis !== data.toString()) {
+            await client.set("data", data.toString());
+            res.send({});
+        }else
+        {
+            res.send(data);
+        }
     } catch (err) {
         res.send(err);
     }

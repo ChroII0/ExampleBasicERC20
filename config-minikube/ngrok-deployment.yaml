@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ngrok
+  labels:
+    app: ngrok
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ngrok
+  template:
+    metadata:
+      labels:
+        app: ngrok
+    spec:
+      containers:
+      - name: ngrok
+        image: ngrok/ngrok
+        ports:
+        - containerPort: 4040
+        env:
+        - name: NGROK_AUTH
+          value: "2LaEANvVGmotrUgWSjVqhTtMSyC_4SAmH9r4us83Kq78Mpgyb"
+        - name: NGROK_PROTOCOL
+          value: "http"
+        - name: NGROK_REGION
+          value: "ap"
+        command: ["ngrok", "http", "http://192.168.49.2:31015"]

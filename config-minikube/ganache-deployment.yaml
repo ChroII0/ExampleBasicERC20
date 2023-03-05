@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ganache
+  labels:
+    app: ganache
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ganache
+  template:
+    metadata:
+      labels:
+        app: ganache
+    spec:
+      containers:
+      - name: ganache
+        image: trufflesuite/ganache
+        ports:
+        - containerPort: 8545
+        env:
+        - name: RPC_ENDPOINT
+          value: "http://0.0.0.0:8545"
+        - name: NETWORK_ID
+          value: "5777"
