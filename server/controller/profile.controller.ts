@@ -66,16 +66,18 @@ export const getDataProfile = async (req: Request, res: Response) => {
         }
         if (dataInRedis !== data.toString()) {
             await client.set("data", data.toString());
-            res.send({
+            const newData = {
                 data,
                 update: true
-            });
+            }
+            res.send(newData);
         }else
         {
-            res.send({
+            const newData = {
                 data,
                 update: false
-            });
+            }
+            res.send(newData);
         }
     } catch (err) {
         res.send(err);
