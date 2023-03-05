@@ -1,6 +1,6 @@
-import express from "express";
 import { getDataProfile } from "../controller/profile.controller";
-const router = express.Router();
+import { router } from "../server";
+
 
 
 
@@ -9,4 +9,4 @@ const router = express.Router();
 router.get("/", getDataProfile);
 
 
-export default router;
+export { router as routerProfile };
