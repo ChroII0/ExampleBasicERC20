@@ -18,13 +18,15 @@ function App() {
   const urlApi: string | any = process.env.REACT_APP_URL_API;
   const [data, setData] = useState({});
   useEffect(() => {
-      const fetchProfile = async () => {
-          const res = await axios.get(urlApi);
-          dispatch(setProfile(res.data));
-          setData(res.data);
+    const fetchProfile = async () => {
+      const res = await axios.get(urlApi);
+      setData(res.data);
+      if (data.toString() !== profile.data.toString() && data.toString() !== "") {
+        dispatch(setProfile(res.data));
       }
-      fetchProfile();
-  }, []);  
+    }
+    fetchProfile();
+  }, []);
   return (
     <>
       {data.toString()===profile.data.toString() ?
