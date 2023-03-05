@@ -51,7 +51,7 @@ export const Project = (props: Props) => {
                                                         <>
                                                             <li key={index} className={index < project.technical_project.length - 1 ? "py-2 border-bottom" : "py-2"}>
                                                                 <p className='fw-bold'>Part {index + 1}: {item.part}</p>
-                                                                {item.data}
+                                                                {item.content}
                                                             </li>
                                                         </>
                                                     )
