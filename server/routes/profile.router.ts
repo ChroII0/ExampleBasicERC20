@@ -1,12 +1,17 @@
 import { getDataProfile } from "../controller/profile.controller";
 import { router } from "../server";
+import { Request, Response } from 'express';
 
 
 
 
 
 
-router.get("/", getDataProfile);
 
+router.get("/profile", getDataProfile);
 
-export { router as routerProfile };
+router.get("/wakeup", (req: Request, res: Response) => {
+    res.send("server is wakeup");
+});
+
+export { router as routerApi };

@@ -5,6 +5,7 @@ export const router = express.Router();
 import cors from "cors";
 import { connect } from 'mongoose';
 import { createClient } from 'redis';
+import { routerApi } from './routes/profile.router';
 
 
 export const client = createClient({
@@ -39,12 +40,9 @@ async function run() {
     await connect(`mongodb+srv://${process.env.USERNAME_MONGO}:${process.env.PASSWORD_MONGO}@${process.env.CLUSTER_MONGO}.10uqsci.mongodb.net/${process.env.DB}`);
     console.log("connected DB");
 }
-import { routerWakeup } from './routes/wakeup.router';
-import { routerProfile } from './routes/profile.router';
 
-app.use('/api/profile', routerProfile);
-app.use('/api/wakeup', routerWakeup);
 
+app.use('/api', routerApi);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
