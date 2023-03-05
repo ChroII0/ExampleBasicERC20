@@ -5,7 +5,8 @@ export const router = express.Router();
 import cors from "cors";
 import { connect } from 'mongoose';
 import { createClient } from 'redis';
-import { routerApi } from './routes/profile.router';
+import { routerProfile } from './routes/profile.router';
+import { routerWakeup } from './routes/wakeup.router';
 
 
 export const client = createClient({
@@ -42,7 +43,8 @@ async function run() {
 }
 
 
-app.use('/api', routerApi);
+app.use('/api', routerProfile);
+app.use('/req', routerWakeup);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
