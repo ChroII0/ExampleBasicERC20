@@ -19,13 +19,15 @@ function App() {
   useEffect(() => {
     const fetchProfile = async () => {
       const res = await axios.get(urlApi);
-      dispatch(setProfile(res.data));
+      if (res.data.last_update) {
+        dispatch(setProfile(res.data));
+      }
     }
     fetchProfile();
   }, []);
   return (
     <>
-      {Object.keys(profile.data).length === 8 ?
+      {Object.keys(profile.data).length === 9 ?
         <>
           <Header />
           <Outlet />
