@@ -33,7 +33,7 @@ export const MyCV = () => {
                 data={profile.data.interest[0]}
             />
             <Project
-                data={profile.data.project[0]}
+                data={profile.data.project}
                 github={profile.data.SocialMedia[0].github}
             />
         </Container>
