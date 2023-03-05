@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchProfile = async () => {
       const res = await axios.get(urlApi);
-      if (res.data.last_update) {
+      if (res.data) {
         dispatch(setProfile(res.data));
       }
     }
