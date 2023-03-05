@@ -54,7 +54,7 @@ export const getDataProfile = async (req: Request, res: Response) => {
         const interests = await Interest.find({});
         const projects = await Project.find({});
         const SocialMedias = await SocialMedia.find({});
-        const data = {
+        const data: any = {
             contact: contacts,
             objective: objectives,
             education: educations,
@@ -66,18 +66,11 @@ export const getDataProfile = async (req: Request, res: Response) => {
         }
         if (dataInRedis !== data.toString()) {
             await client.set("data", data.toString());
-            const newData = {
-                data,
-                update: true
-            }
-            res.send(newData);
-        }else
-        {
-            const newData = {
-                data,
-                update: false
-            }
-            res.send(newData);
+            data.last_update = true;
+            res.send(data);
+        } else {
+            data.last_update = false;
+            res.send(data);
         }
     } catch (err) {
         res.send(err);

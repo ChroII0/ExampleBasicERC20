@@ -25,6 +25,8 @@ function App() {
     }
     fetchProfile();
   }, []);
+  console.log(profile.data);
+  
   return (
     <>
       {Object.keys(profile.data).length === 9 ?
