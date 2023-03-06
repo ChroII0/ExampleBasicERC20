@@ -8,6 +8,7 @@ import { SocialMedia } from "../model/socialMedia.model";
 import { Request, Response } from 'express';
 import { client } from "../server";
 import requestIp from 'request-ip';
+import axios from "axios";
 
 
 
@@ -40,28 +41,25 @@ async function checkIpAddress(ip: string | null) {
     };
     return visitor;
 }
-const getCurrentAccessTime = () => {
-    const date = new Date();
-    const [month, day, year] = [
-        date.getMonth(),
-        date.getDate(),
-        date.getFullYear(),
-    ];
-    const [hour, minutes, seconds] = [
-        date.getHours(),
-        date.getMinutes(),
-        date.getSeconds(),
-    ];
+const getCurrentAccessTime =  async (ipAddress: string | null) => {
+    const res: any = await axios.get(`https://www.timeapi.io/api/Time/current/ip?ipAddress=${ipAddress}`);
+    const [date, time, hour, timeZone, dayOfWeek] = [
+        res.date,
+        res.time,
+        res.hour,
+        res.timeZone,
+        res.dayOfWeek
+    ]
     const amOrPm = hour < 12 ? 'AM' : 'PM';
-    return `${day}-${month}-${year}, ${hour}:${minutes}:${seconds} ${amOrPm}`
+    return `${dayOfWeek} ${date}, ${time} ${amOrPm}, ${timeZone}`;
 }
 
 export const getDataProfile = async (req: Request, res: Response) => {
     const ipAddress = requestIp.getClientIp(req);
     const visitor_data = await checkIpAddress(ipAddress);
-    const currentAccessTime = getCurrentAccessTime();
+    const currentAccessTime = await getCurrentAccessTime(ipAddress);
     const lastRecentAccess = await client.get("access_time");
-    await client.set("access_time", currentAccessTime + ` (By IP ${ipAddress})`);
+    await client.set("access_time", currentAccessTime);
     try {
         const contacts = await Contact.find({});
         const objectives = await Objective.find({});
