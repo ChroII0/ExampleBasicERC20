@@ -42,13 +42,13 @@ async function checkIpAddress(ip: string | null) {
     return visitor;
 }
 const getCurrentAccessTime =  async (ipAddress: string | null) => {
-    const res: any = await axios.get(`https://www.timeapi.io/api/Time/current/ip?ipAddress=${ipAddress}`);
+    const res = await axios.get(`https://www.timeapi.io/api/Time/current/ip?ipAddress=${ipAddress}`);    
     const [date, time, hour, timeZone, dayOfWeek] = [
-        res.date,
-        res.time,
-        res.hour,
-        res.timeZone,
-        res.dayOfWeek
+        res.data.date,
+        res.data.time,
+        res.data.hour,
+        res.data.timeZone,
+        res.data.dayOfWeek
     ]
     const amOrPm = hour < 12 ? 'AM' : 'PM';
     return `${dayOfWeek} ${date}, ${time} ${amOrPm}, ${timeZone}`;
