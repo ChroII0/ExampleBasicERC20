@@ -44,7 +44,7 @@ export const Project = (props: Props) => {
                                                 <td>{project.team_size}</td>
                                             </tr>
                                             <tr>
-                                                <th className='text-truncate'>Responsibility in project</th>
+                                                <th className=''>Responsibility in project</th>
                                                 <td>{project.responsibility}</td>
                                             </tr>
                                             <tr>
