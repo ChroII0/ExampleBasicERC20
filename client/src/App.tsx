@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { selectProfile, setProfile } from "./redux/profile/slides/profileSlide";
@@ -19,12 +19,11 @@ function App() {
   useEffect(() => {
     const fetchProfile = async () => {
       const res = await axios.get(urlApi);
-      if (res.data.last_update) {
-        dispatch(setProfile(res.data));
-      }
+      dispatch(setProfile(res.data));
     }
     fetchProfile();
-  }, []);  
+  }, []);
+  console.log(profile.data.lastAccessTime);
   return (
     <>
       {Object.keys(profile.data).length === 9 ?

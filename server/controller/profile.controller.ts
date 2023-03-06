@@ -40,12 +40,28 @@ async function checkIpAddress(ip: string | null) {
     };
     return visitor;
 }
-
+const getCurrentAccessTime = () => {
+    const date = new Date();
+    const [month, day, year] = [
+        date.getMonth(),
+        date.getDate(),
+        date.getFullYear(),
+    ];
+    const [hour, minutes, seconds] = [
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds(),
+    ];
+    const amOrPm = hour < 12 ? 'AM' : 'PM';
+    return `${day}-${month}-${year}, ${hour}:${minutes}:${seconds} ${amOrPm}`
+}
 
 export const getDataProfile = async (req: Request, res: Response) => {
     const ipAddress = requestIp.getClientIp(req);
     const visitor_data = await checkIpAddress(ipAddress);
-    const dataInRedis = await client.get("data");
+    const currentAccessTime = getCurrentAccessTime();
+    const lastRecentAccess = await client.get("access_time");
+    await client.set("access_time", currentAccessTime + ` (By IP ${ipAddress})`);
     try {
         const contacts = await Contact.find({});
         const objectives = await Objective.find({});
@@ -62,17 +78,14 @@ export const getDataProfile = async (req: Request, res: Response) => {
             interest: interests,
             project: projects,
             SocialMedia: SocialMedias,
-            Visitor: visitor_data
+            Visitor: visitor_data,
+            lastRecentAccess: lastRecentAccess
         }
-        if (dataInRedis !== data.toString()) {
-            await client.set("data", data.toString());
-            data.last_update = true;
-            res.send(data);
-        } else {
-            data.last_update = false;
-            res.send(data);
-        }
+        await client.set("data", data.toString());
+        res.send(data);
     } catch (err) {
-        res.send(err);
+        const dataInRedis = await client.get("data");
+        res.send(JSON.stringify(dataInRedis));
+
     }
 }

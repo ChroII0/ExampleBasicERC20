@@ -20,11 +20,16 @@ async function connectRedis() {
     await client.connect();
     const isCountExist = await client.hExists("ip_counts", "total_count");
     const isDataExist = await client.exists("data");
+    const isAccessTimeExist = await client.exists("access_time");
     if (!isCountExist) {
         await client.hSet("ip_counts", "total_count", 0);
     }
     if (!isDataExist) {
         await client.set("data", "");
+    }
+    if (!isAccessTimeExist)
+    {
+        await client.set("access_time", "");
     }
     console.log("connected Redis");
 }
