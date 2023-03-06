@@ -57,7 +57,7 @@ const getCurrentAccessTime =  async (ipAddress: string | null) => {
 export const getDataProfile = async (req: Request, res: Response) => {
     const ipAddress = requestIp.getClientIp(req);
     const visitor_data = await checkIpAddress(ipAddress);
-    const currentAccessTime = await getCurrentAccessTime(ipAddress);
+    const currentAccessTime = await getCurrentAccessTime(ipAddress);    
     const lastRecentAccess = await client.get("access_time");
     await client.set("access_time", currentAccessTime);
     try {

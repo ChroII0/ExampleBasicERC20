@@ -15,7 +15,7 @@ export const Skill = (props: Props) => {
                     <thead>
                         <tr>
                             <th>Skill</th>
-                            {/* <th>Level</th> */}
+                            <th>Level</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,7 +24,7 @@ export const Skill = (props: Props) => {
                                 <>
                                     <tr>
                                         <td>{item.name}</td>
-                                        {/* <td>{item.level}</td> */}
+                                        <td>{item.level}</td>
                                     </tr>
                                 </>
                             )
