@@ -50,8 +50,8 @@ const getCurrentAccessTime =  async (ipAddress: string | null) => {
         res.data.timeZone,
         res.data.dayOfWeek
     ]
-    const amOrPm = hour < 12 ? 'AM' : 'PM';
-    return `${dayOfWeek} ${date}, ${time} ${amOrPm}, ${timeZone}`;
+    //const amOrPm = hour < 12 ? 'AM' : 'PM';
+    return `${dayOfWeek} ${date}, ${time}, ${timeZone}`;
 }
 
 export const getDataProfile = async (req: Request, res: Response) => {
