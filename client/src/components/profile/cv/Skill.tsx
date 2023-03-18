@@ -12,19 +12,12 @@ export const Skill = (props: Props) => {
             <h3>SKILLS</h3>
             <Col className='border-top border-dark'>
                 <Table striped>
-<!--                     <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Level</th>
-                        </tr>
-                    </thead> -->
                     <tbody>
                         {props.data.map((item: any, index: any) => {
                             return (
                                 <>
                                     <tr>
                                         <td>{item.name}</td>
-<!--                                         <td>{item.level}</td> -->
                                     </tr>
                                 </>
                             )
